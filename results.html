@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{bos}}">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{style}}">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+	<title>Module 1. Vocabulary. Exercises</title>
+</head>
+<body>
+    <!-- <div><a href="../1" class="idBack">НАЗАД</a></div> -->
+    <section>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-8">
+                <div class="row">
+                   <img width="300px" height="200px" src="{{ img }}">
+                    {% if right.count(True) == 5 %}
+                    <h2>УЛЬТРАМЕГАХОРОШ</h2>
+        <h3>Вы просто молодец, что нашли время на выполнение заданий!
+            Тема отработана, подборка выполнена просто на ура!</h3>
+    {% endif %}
+    {% if right.count(True) == 4 %}
+        <h2>МЕГАХОРОШ</h2>
+        <h3>Вы прекрасно справились с заданиями! 
+            Продолжайте в том же духе, и, без сомнения, Вы достигнете своей цели!</h3>
+    {% endif %}
+    {% if right.count(True) == 3 %}
+        <h2>ХОРОШ</h2>
+        <h3>У Вас хорошо получается решать эти задачи!
+            Мы будем подправлять маленькие нюансы, и Вы сможете решить 
+            любую задачу! Продолжайте в том же духе, и у Вас будет космический результат!</h3>
+    {% endif %}
+    {% if right.count(True) == 2 %}
+        <h2>ОБЫЧНЫЙ ИСПАНСКИЙ ШУТНИК</h2>
+        <h3>Вы справляетесь с заданиями всё лучше и лучше!
+            Продолжайте так же успешно и усердно заниматься и
+            высокий уровень испанского будет у Вас в кармане!</h3>
+
+    {% endif %}
+    {% if right.count(True) == 1 %}
+        <h2>ВЫ НА 1 ЗЕЛЁНЫЙ ШАР БЛИЖЕ К УСПЕХУ ИСПАНСКИХ ПРОГРАММИСТОВ</h2>
+    {% endif %}
+    {% if right.count(True) == 0 %}
+        <h2>0_0</h2>
+    {% endif %}
+                </div>
+                <div class="row"><h2>Результат</h2>
+                {% for i in right  %}
+                    {% if i %}
+                        <div class="col button">
+                            <div class="link btn btn-success btn-lg" style="background-color: #28a745; width:80px; height: 80px;">
+                                <span>v</span>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="col button">
+                            <div class="link btn btn-success btn-lg" style="background-color: #dc3545; width:80px; height: 80px;">
+                                <span>v</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="col button">
+                        <a href="" class="link btn btn-success btn-lg" >
+                            <span >Заново</span>
+                        </a>
+                    </div>
+                    <div class="col button">
+                        <a href="../1" class="link btn btn-success btn-lg">
+                            <span >К модулю</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </section>
+    
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

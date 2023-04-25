@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ bos }}">
+    <link rel="stylesheet" type="text/css" href="{{ style }}">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+	<title>Регистрация</title>
+</head>
+<body>
+    <div><a href="../" class="idBack">НАЗАД</a></div>
+    <section>
+        <h2>Регистрация профиля</h2>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                
+                <div class="form">
+                    <form action="#" action="" method="post">
+                        {{ form.hidden_tag() }}
+                        <label for="fname">Имя *</label>
+                        {{ form.name(class="form-control", type="text", placeholder="Ваше имя", required=True) }}<br>
+                        {% for error in form.name.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                        {% endfor %}
+                        <label for="lname">Фамилия *</label>
+                        {{ form.surname(class="form-control", type="text", placeholder="Ваша фамилия", required=True) }}<br>
+                        {% for error in form.surname.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                        {% endfor %}
+
+                        <label for="email">Электронная почта *</label>
+                        {{ form.email(class="form-control", type="email", placeholder="Адрес Вашей электронной почты", required=True) }}<br>
+                        {% for error in form.email.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                        {% endfor %}
+
+                        <label for="password">Пароль *</label>
+                        {{ form.password(class="form-control", type="password", placeholder="Пароль", required=True) }}<br>
+                        {% for error in form.password.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                        {% endfor %}
+
+                        <label for="password-repeat">Повторить пароль *</label>
+                        {{ form.password_again(class="form-control", type="password", placeholder="Пароль", required=True) }}<br>
+                        {% for error in form.password_again.errors %}
+                            <p class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </p>
+                        {% endfor %}
+                        {{ form.submit(type="submit", class="btn btn-primary", value="Зарегистрироваться")}}
+                        {{message}}
+                    </form>
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </section>
+    
+</body>
+</html>

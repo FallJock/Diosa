@@ -1,0 +1,483 @@
+* {
+	box-sizing: border-box;
+}
+
+/*НАЧАЛО. СКРЫТИЕ СКРОЛЛА*/
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px; /* remove scrollbar space */
+    background: transparent; /* make scrollbar invisible */
+}
+/*КОНЕЦ. СКРЫТИЕ СКРОЛЛА*/
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+section {
+	height: 100vh;
+}
+
+p, a, h2 {
+	color: black;
+}
+
+h2 {
+	padding-top: 10px;
+	text-align: center;
+	line-height: 100px;
+}
+
+.col, .col-4, .col-8 {
+	padding-right: 10px;
+	padding-left: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.col {
+	padding-top: 8%;
+	padding-bottom: 8%;
+	text-align: center;
+}
+
+.col-4, .col-8 {
+	padding-top: 10px;
+}
+
+.alert-danger {
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+th {
+    text-align: center;
+}
+
+.table-bordered {
+	border-color: black;
+}
+
+a {
+	color: black;
+	text-decoration: underline;
+}
+
+a.idBack {
+ 	position: fixed;
+ 	z-index: 1;
+ 	bottom: 0%;
+ 	right: 0%;
+ 	background: #3CB371;
+ 	opacity: 0.6;
+ 	color: #fff;
+ 	font-size: 20px;
+ 	text-decoration: none;
+ 	padding: 10px;
+ 	margin: 5px 15px 15px 5px;
+ 	border-radius: 10px;
+}
+
+a.idBack:hover {
+ 	opacity: 1;
+}
+
+.m {
+	color: #1C4587;
+}
+
+.f {
+	color: #660000;
+}
+
+.short-row {
+	height: 110px;
+}
+
+.form {
+	background-color: #ededed;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	padding: 40px;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+input[type=text], input[type=email], input[type=password], select, textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 25px;
+}
+
+input[type=submit] {
+	width: 100%;
+	background-color: #04AA6D;
+	color: white;
+	padding: 10px 20px;
+	border: 2px solid white;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 1s ease-in-out,
+		color 1s ease-in-out, border-color 1s ease-in-out;
+}
+
+input[type=submit]:hover {
+	background-color: white;
+	color: #04AA6D;
+	border: 2px solid #04AA6D;
+	transition: background-color 1s ease-in-out,
+		color 1s ease-in-out, border-color 1s ease-in-out;
+}
+
+textarea {
+	height: 180px;
+}
+
+.exercises {
+	margin-top: 75px;
+	height: 150px;
+	border: 5px solid #28A745;
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    background-color: rgba(40, 167, 69, 0.4);
+}
+
+.question {
+	font-size: 28px;
+	padding: 10px;
+}
+
+.voice-button {
+	margin-top: 0px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+}
+
+.glyphicon-mic {
+	font-size: 54px;
+}
+
+.link {
+	text-decoration: none;
+	width: 120px;
+	height: 120px;
+	border-radius: 80px;
+}
+
+.mic {
+	font-size: 80px;
+}
+
+/* здесь начинается включение стилей из файла Дианы (совмещение) */
+
+.menu {
+    background-color: #3CB371;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    border-bottom: 3px solid #fff;
+}
+
+.menu-box {
+    display: table;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menu-box-block {
+    float: left;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    height: 85%;
+    width: max-content;
+    min-width: 250px;
+    max-width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: #fff;
+    border: 3px solid #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.menu-box-block:last-child {
+    float: right;
+}
+
+.menu-box-block:nth-last-child(2) {
+    float: right;
+}
+
+
+.menu-box-block:hover {
+    transition: 0.4s;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.menu-box-block:hover .menu-box-block-text {
+    transition: 0.4s;
+    color: #fff;
+}
+
+.menu-box-block-flex {
+    text-decoration: none;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.menu-box-block-text {
+    transition: 1s;
+    font-size: 20px;
+    font-weight: bold;
+    color: #3CB371;
+    text-align: center;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
+.list {
+    position: relative;
+    top: 60px;
+    background-color: rgba(60, 179, 113, 0.2);
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    padding: 20px;
+    left: 0;
+    box-sizing: border-box;
+
+}
+
+.list-item {
+    border: 3px solid #3CB371;
+    background-color: rgba(60, 179, 113, 0.1);
+    border-radius: 20px; 
+    margin-top: 20px;
+    min-height: 300px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sorted-menu {
+    background-color:lightcoral;
+    position: relative;
+    top: 60px;
+    width: 100%;
+    height: 40px;
+}
+
+.sorted-menu-box {
+    display: table;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sorted-menu-box-block {
+    float: left;
+    height: 100%;
+    width: max-content;
+    min-width: 100px;
+    max-width: 300px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: antiquewhite;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 2px;
+}
+
+
+.sorted-menu-but {
+    background-color:antiquewhite;
+    transition: 1s;
+}
+
+.sorted-menu-but:hover {
+    transition: 0.4s;
+    background-color:salmon;
+}
+
+.sorted-menu-but:hover .sorted-menu-box-block-text {
+    transition: 0.4s;
+    color: antiquewhite;
+}
+
+
+
+.sorted-menu-box-block-flex {
+    text-decoration: none;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.sorted-menu-box-block-text {
+    transition: 1s;
+    font-size: 20px;
+    font-weight: bold;
+    color: #26253d;
+    text-align:center;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    overflow-x:hidden;
+}
+
+a.menu-box-block-flex {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* ЭКСПЕРИМЕНТАЛЬНЫЙ ВАРИАНТ ГЛАВНОЙ СТРАНИЦЫ */
+.img-circle {
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.section {
+    padding: 15px;
+    margin: 90px 10px 15px 10px;
+    border-radius: 10px;
+}
+
+#header {
+    background-color: #3CB371;
+    background-size: cover;
+    padding: 60px 20px 40px 20px;
+}
+
+#blog {
+    background-color: rgba(60, 179, 113, 0.05);
+    border: 3px solid #3CB371;
+    background-size: cover;
+    padding: 60px 40px 40px 40px;
+}
+
+#header img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: auto auto 20px auto;
+}
+
+#header p {
+    font-size: 54px;
+    color: #fff;
+    padding-top: 5px;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.blog {
+    padding: 15px;
+    margin: 15px 10px 15px 10px;
+    border-radius: 10px;
+}
+
+.quote {
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #3CB371;
+    font-weight: 400;
+    text-align: right;
+    margin-top: 20px;
+}
+
+h3 span {
+    text-transform: uppercase;
+    font-size: 36px;
+    color: #3CB371;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.info {
+    font-size: 20px;
+    color: black;
+}
+
+/* ВОПРОСЫ */
+
+.questions {
+    padding: 15px 15px 30px 15px;
+    margin: 60px 10px 15px 10px;
+    border-radius: 10px;
+}
+
+h3#faq {
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.accordion {
+    background-color: #3CB371;
+    color: #fff;
+    cursor: pointer;
+    padding: 30px;
+    width: 100%;
+    border: 3px solid #3CB371;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: rgba(60, 179, 113, 0.8);
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    border-top: none;
+    border-right: 3px solid #3CB371;
+    border-bottom: 3px solid #3CB371;
+    border-left: 3px solid #3CB371;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.answer {
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 30px 18px;
+}
+
+#idBackModules {
+    -webkit-box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.3);
+}

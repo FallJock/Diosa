@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ bos }}">
+    <link rel="stylesheet" type="text/css" href="{{ style }}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>WEB-app</title>
+</head>
+<body>
+    <section>
+        <div class="menu">
+            <div class="menu-box">
+                <div class="menu-box-block">
+                    <a class="menu-box-block-flex" href="/">
+                        <div class="menu-box-block-text">Главная страница</div>
+                    </a>
+                </div>
+                <div class="menu-box-block">
+                    <a class="menu-box-block-flex" href="modules">
+                        <div class="menu-box-block-text">Модули
+                        </div>
+                    </a>
+                </div>
+                <div class="menu-box-block">
+                    <a class="menu-box-block-flex" href="help">
+                        <div class="menu-box-block-text">Поддержка
+                        </div>
+                    </a>
+                </div>
+                {% if current_user.is_authenticated %}
+                    <div class="menu-box-block">
+                        <a class="menu-box-block-flex" href="/logout">
+                            <div class="menu-box-block-text">{{ current_user.name }}
+                            </div>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="menu-box-block">
+                        <a class="menu-box-block-flex" href="register">
+                            <div class="menu-box-block-text">Зарегистрироваться
+                            </div>
+                        </a>
+                    </div>
+                    <div class="menu-box-block">
+                        <a class="menu-box-block-flex" href="login">
+                            <div class="menu-box-block-text">Войти
+                            </div>
+                        </a>
+                    </div>
+                {% endif %}
+                
+            </div>
+        </div>
+        <!--
+        <div class="list">
+            <ul>
+                <li class="list-item">новость</li>
+                <li class="list-item">новость</li>
+                <li class="list-item">новость</li>
+            </ul>
+        </div>-->
+
+        <!-- ЭКСПЕРИМЕНТАЛЬНЫЙ ВАРИАНТ ГЛАВНОЙ СТРАНИЦЫ -->
+        <div id="header" class="section">
+            <img alt="" class="img-circle" src="static/css/images/circle.jpg">
+            <p>Онлайн-школа испанского языка Diosa</p>
+        </div>
+
+        <div id="blog" class="blog">
+            <h3><span>Об онлайн-школе</span></h3>
+            <p class="info">
+                Рады приветствовать Вас на странице нашей онлайн-школы испанского языка 
+                Рады приветствовать Вас на странице нашей онлайн-школы испанского языка Diosa! <br><br> Система нашего обучения в школе построена на последовательном прохождении модулей, в которых подробно изложена теория по грамматическим и лексическим темам и организовано её закрепление в виде прохождения интерактивных тренажёров. <br><br> P.S. мы хотим убедиться, что вся информация, подготовленная методистами на курсе, будет для Вас легка, доступна и понятна, поэтому следующий модуль будет доступен к изучению только в том случае, когда система скажет, что Вы идеально отработали текущий уровень и откроет Вам доступ к следующему блоку. Есть ещё один нюанс: систему нужно подкармливать, когда она голодная – она вредная, поэтому вместе с идеальной отработкой в комплект входит своевременный платёж. Учитесь с удовольствием! <br><br> P.S.S. Почему же онлайн-школа называется Diosa? Это название сложено из двух имён её основателей – Diana L. и Sophie T. С испанского языка "diosa" переводится как "богиня", многие считают испанский язык очень красивым и мелодичным, поэтому этот язык западает в души людей, изучающих его. А онлайн-школа Diosa сделает всё, чтобы Вы смогли изучить язык на уровне, на котором разговаривает diosa!
+            </p>
+            <p class="quote">"Сколько языков знает человек - столько раз он человек ~ И.В.Гёте"</p>
+        </div>
+        <div class="questions">
+            <h3 id="faq"><span>Заблаговременно ответим на возможные вопросы :)</span></h3>
+            <button class="accordion">Вы присылаете задания по почте?</button>
+            <div class="panel">
+              <p class="answer">Нет, мы не присылаем задания по электронной почте. Все задания публикуются и проверяются на платформе дистанционного обучения. У каждого ученика есть свой личный кабинет, в котором отображаются все доступные ему задания.</p>
+            </div>
+
+            <button class="accordion">Когда можно выполнять задания?</button>
+            <div class="panel">
+              <p class="answer">Вы можете выполнять задания хоть в полдень, хоть в полночь, хоть в три утра, хоть в три ночи — в любое удобное для Вас время, ведь доступ к платформе круглосуточен, без перерывов на обед :)</p>
+            </div>
+
+            <button class="accordion">А к заданиям есть ответы?</button>
+            <div class="panel">
+              <p class="answer">Есть. После того, как Вы проходите небольшой блок заданий, система выведет Вам наглядную статистику по данными Вами ответам.</p>
+            </div>
+
+            <button class="accordion">Сколько времени следует уделять изучению языка?</button>
+            <div class="panel">
+              <p class="answer">На этот вопрос невозможно дать чёткого ответа. Это очень зависит от вашего уровня и тщательности, с которой вы прорабатываете задания. На самом деле, проходя наш курс с нуля, достаточно уделять урокам по 15-20 минут в день, потому что в этом деле главное – регулярность!</p>
+            </div>
+
+            <button class="accordion">А что делать, если мне слишком сложно?</button>
+            <div class="panel">
+              <p class="answer">Не сдаваться. Втянетесь – станет полегче. Не поленюсь ещё раз напомнить Вам о том, что главное – регулярность. Перечитывайте теорию, переделывайте задания до тех пор, пока оно не будет выполнено идеально. И обязательно задавайте вопросы. Наша почта всегда открыта для помощи Вам, мы стараемся отвечать на письма в течение суток. Желаем Вам удачи!</p>
+            </div>
+
+            <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                  panel.style.display = "none";
+                } else {
+                  panel.style.display = "block";
+                }
+              });
+            }
+            </script>
+        </div>
+    </section>
+</body>
+</html>
